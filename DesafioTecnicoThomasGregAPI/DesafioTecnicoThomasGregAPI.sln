@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioTecnicoThomasGregAPI", "DesafioTecnicoThomasGregAPI\DesafioTecnicoThomasGregAPI.csproj", "{4DE78AE0-246B-4EC8-98BC-A509AB359D70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioTecnicoThomasGregAPI.Facades", "DesafioTecnicoThomasGregAPI.Facades\DesafioTecnicoThomasGregAPI.Facades.csproj", "{71DC6AD6-4D45-469B-AA29-E5ADBDE0AC0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioTecnicoThomasGregAPI.Models", "DesafioTecnicoThomasGregAPI.Models\DesafioTecnicoThomasGregAPI.Models.csproj", "{9890981B-AA1A-444B-87E9-4E358AC92380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioTecnicoThomasGregAPI.Repository", "DesafioTecnicoThomasGregAPI.Repository\DesafioTecnicoThomasGregAPI.Repository.csproj", "{4A8D842A-9C85-4C5E-8B4E-FCAD0345353C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioTecnicoThomasGregAPI.Services", "DesafioTecnicoThomasGregAPI.Services\DesafioTecnicoThomasGregAPI.Services.csproj", "{DE289E77-C1A8-49D3-97AA-41605B566EFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DE78AE0-246B-4EC8-98BC-A509AB359D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DE78AE0-246B-4EC8-98BC-A509AB359D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DE78AE0-246B-4EC8-98BC-A509AB359D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DE78AE0-246B-4EC8-98BC-A509AB359D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71DC6AD6-4D45-469B-AA29-E5ADBDE0AC0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71DC6AD6-4D45-469B-AA29-E5ADBDE0AC0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71DC6AD6-4D45-469B-AA29-E5ADBDE0AC0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71DC6AD6-4D45-469B-AA29-E5ADBDE0AC0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9890981B-AA1A-444B-87E9-4E358AC92380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9890981B-AA1A-444B-87E9-4E358AC92380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9890981B-AA1A-444B-87E9-4E358AC92380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9890981B-AA1A-444B-87E9-4E358AC92380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A8D842A-9C85-4C5E-8B4E-FCAD0345353C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A8D842A-9C85-4C5E-8B4E-FCAD0345353C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A8D842A-9C85-4C5E-8B4E-FCAD0345353C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A8D842A-9C85-4C5E-8B4E-FCAD0345353C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE289E77-C1A8-49D3-97AA-41605B566EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE289E77-C1A8-49D3-97AA-41605B566EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE289E77-C1A8-49D3-97AA-41605B566EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE289E77-C1A8-49D3-97AA-41605B566EFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02AA5ABA-A143-440C-92FE-2C7CBA6E9B34}
+	EndGlobalSection
+EndGlobal

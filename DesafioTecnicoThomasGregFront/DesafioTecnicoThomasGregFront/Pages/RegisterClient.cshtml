@@ -1,0 +1,130 @@
+﻿@page
+@model DesafioTecnicoThomasGregFront.Pages.RegisterClientModel
+@{
+}
+<div class="text-center">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Yinka Enoch Adedokun">
+        <p>
+            <title>Login Page</title>
+    </head>
+    <body>
+        <!-- Main Content -->
+        <div class="container-fluid">
+            <div class="row main-content bg-success text-center">
+                <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <form class="form-group" method="post">
+                                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                                {
+                                    <div class="alert alert-danger" role="alert">
+                                        @Model.ErrorMessage
+                                    </div>
+                                }
+                                <div class="row">
+                                <div class="form-input">
+                                    <div class="preview">
+                                        <img id="file-ip-1-preview">
+                                    </div>
+                                    <label for="file-ip-1">Upload Image</label>
+                                    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <input type="text" asp-for="Client.Name" name="Name" id="Client.Name" class="form__input" placeholder="Name">
+                                </div>
+                                <div class="row">
+                                    <input type="email" asp-for="Client.Email" name="Email" id="Client.Email" class="form__input" placeholder="Email">
+                                </div>
+                                <div id="addressOptions">
+                                    <!-- Opções de endereço dinâmicas serão renderizadas aqui -->
+                                </div>
+                                <button class="btn" type="button" onclick="addAddress()">+ Add Endereço</button>
+
+                                <div class="row">
+                                    <input type="submit" value="Submit" class="btn">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function showPreview(event) {
+                if (event.target.files.length > 0) {
+                    var src = URL.createObjectURL(event.target.files[0]);
+                    var preview = document.getElementById("file-ip-1-preview");
+                    preview.src = src;
+                    preview.style.display = "block";
+                }
+            }
+
+            function addAddress() {
+                var addressOptions = document.getElementById("addressOptions");
+                var addressCount = addressOptions.querySelectorAll("input[name^='Addresses']").length / 4;
+                
+                var nameLabel = document.createElement("label");
+                nameLabel.innerHTML = "Endereço " + (addressCount + 1) + ":";
+                addressOptions.appendChild(nameLabel);
+
+                var addressDiv = document.createElement("div");
+                addressDiv.classList.add("address");
+
+                var streetInput = document.createElement("input");
+                streetInput.type = "text";
+                streetInput.name = "Addresses[" + addressCount + "].Name";
+                streetInput.placeholder = "Rua";
+                streetInput.classList.add("form__input");
+                addressDiv.appendChild(streetInput);
+
+                var numberInput = document.createElement("input");
+                numberInput.type = "number";
+                numberInput.name = "Addresses[" + addressCount + "].Number";
+                numberInput.placeholder = "Número";
+                numberInput.classList.add("form__input");
+                addressDiv.appendChild(numberInput);
+
+                var addressDetail = document.createElement("input");
+                addressDetail.type = "text";
+                addressDetail.name = "Addresses[" + addressCount + "].AddressDetail";
+                addressDetail.placeholder = "Complemento";
+                addressDetail.classList.add("form__input");
+                addressDiv.appendChild(addressDetail);
+
+                var zipCodeInput = document.createElement("input");
+                zipCodeInput.type = "text";
+                zipCodeInput.name = "Addresses[" + addressCount + "].ZipCode";
+                zipCodeInput.placeholder = "CEP";
+                zipCodeInput.classList.add("form__input");
+                zipCodeInput.addEventListener('input', function () {
+                    formatZipCode(this);
+                });
+                addressDiv.appendChild(zipCodeInput);
+
+                addressOptions.appendChild(addressDiv);
+            }
+
+            function formatZipCode(input) {
+                var zip = input.value.replace(/\D/g, '');
+
+                if (zip.length > 5) {
+                    zip = zip.substring(0, 5) + '-' + zip.substring(5);
+                }
+
+                if (zip.length > 9) {
+                    zip = zip.substring(0, 9);
+                }
+
+                input.value = zip;
+            }
+        </script>
+    </body>
+
+</div>

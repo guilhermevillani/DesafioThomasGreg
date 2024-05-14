@@ -1,0 +1,45 @@
+﻿@page
+@model DesafioTecnicoThomasGregFront.Pages.HomeModel
+@{
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<div class="">
+    <button onclick="window.location.href = '/RegisterClient';" type="button" style="background-color: #206b48" class="btn btn-primary btn-lg">Add Cliente</button>
+</div>
+<section>
+    <div class="container">
+        <div class="row">
+            @if (Model.clients.Any())
+            {
+                foreach (var client in Model.clients)
+                {
+                    <div class="col-md-4">
+                        <div class="card card-01">
+                            <img class="card-img-top" src="https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Card image cap">
+                            <div class="card-body">
+                                <span class="badge-box"><i class="fa fa-user-circle-o"></i></span>
+                                <h4 class="card-title">@client.Name</h4>
+                                <p class="font-weight-light">@client.Email</p>
+
+                                @foreach (var address in @client.Addresses)
+                                {
+                                    <p class="font-italic"><b>- </b>@address.Name @address.Number @address.AddressDetail</p>
+                                }
+
+                                <form asp-page-handler="Edit" asp-route-id="@client.Id" method="post">
+                                    <button type="submit" style="background-color: #206b48" class="btn btn-default text-uppercase">Editar<i class="bi bi-pencil"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+    </div>
+</section>

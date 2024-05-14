@@ -1,0 +1,6 @@
+@DesafioTecnicoThomasGregAPI_HostAddress = http://localhost:5162
+
+GET {{DesafioTecnicoThomasGregAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
