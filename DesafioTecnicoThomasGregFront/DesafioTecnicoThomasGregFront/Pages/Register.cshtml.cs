@@ -34,7 +34,7 @@ namespace DesafioTecnicoThomasGregFront.Pages
 
 			var content = new StringContent(JsonSerializer.Serialize(loginData), System.Text.Encoding.UTF8, "application/json");
 
-			var response = await _httpClient.PostAsync("https://localhost:44394/api/AuthManagement/Register", content);
+			var response = await _httpClient.PostAsync("http://localhost:44394/api/AuthManagement/Register", content);
 
 			if (response.IsSuccessStatusCode)
 			{

@@ -27,13 +27,13 @@ namespace DesafioTecnicoThomasGregFront.Pages
         {
             var token = HttpContext.Session.GetString("Token");
 
-            // Incluir a token no cabeçalho da requisição
+            // Incluir a token no cabeï¿½alho da requisiï¿½ï¿½o
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            // Fazer uma requisição à API
-            var response = await _httpClient.GetAsync("https://localhost:44394/api/Clients");
+            // Fazer uma requisiï¿½ï¿½o ï¿½ API
+            var response = await _httpClient.GetAsync("http://localhost:44394/api/Clients");
 
-            // Verificar se a requisição foi bem-sucedida
+            // Verificar se a requisiï¿½ï¿½o foi bem-sucedida
             if (response.IsSuccessStatusCode)
             {
                 var responseBody = await response.Content.ReadAsStringAsync();
@@ -50,14 +50,14 @@ namespace DesafioTecnicoThomasGregFront.Pages
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            // Aqui você pode escrever o código que deseja executar após o clique do botão
-            // Por exemplo, você pode chamar outro método, manipular dados do formulário, etc.
+            // Aqui vocï¿½ pode escrever o cï¿½digo que deseja executar apï¿½s o clique do botï¿½o
+            // Por exemplo, vocï¿½ pode chamar outro mï¿½todo, manipular dados do formulï¿½rio, etc.
         }
 
         public IActionResult OnPost(ClientDTO client)
         {
             // Processar o modelo do cliente
-            return RedirectToAction("EditClient"); // Ou outra ação após a edição
+            return RedirectToAction("EditClient"); // Ou outra aï¿½ï¿½o apï¿½s a ediï¿½ï¿½o
         }
         public async Task OnPostButton()
         {

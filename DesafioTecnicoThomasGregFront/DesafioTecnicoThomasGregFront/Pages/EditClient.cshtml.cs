@@ -58,7 +58,7 @@ namespace DesafioTecnicoThomasGregFront.Pages
 
             var content = new StringContent(JsonSerializer.Serialize(updatedClient), System.Text.Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PatchAsync("https://localhost:44394/api/Clients", content);
+            var response = await _httpClient.PatchAsync("http://localhost:44394/api/Clients", content);
 
             if (response.IsSuccessStatusCode)
             {
